@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <body class="bg-gray-100 h-screen overflow-hidden">
       <div class="grid grid-cols-1 h-full">
         <header class="flex justify-between items-center p-4 bg-white shadow-md">
-          <div class="flex space-x-4">
+          <div class="flex space-x-2 sm:space-x-4">
             <span class="text-3xl font-bold text-blue-600">cashflow</span>
             <span class="text-gray-700 hover:text-blue-500 cursor-pointer">Help Center</span>
             <span class="text-gray-700 hover:text-blue-500 cursor-pointer">Business</span>
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
             </section>
-            <section class="hidden lg:block" id="card_display">
+            <section id="card_display">
               <div class="mt-4 border-2 text-white p-4 rounded-lg h-[200px]" style="background: linear-gradient(to right, #1E3A8A, #60A5FA);">
                 <div class="flex justify-between items-center">
                   <span id="card-account-number">**** **** 4223</span>
@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
             </section>
           </article>
           <article class="bg-white p-3 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 gap-3">
-            <section class="shadow p-2 hidden lg:block" id="chart_display">
-              <section class="h-[250px] " id="donutchart"></section>
+            <section class="shadow p-2" id="chart_display">
+              <section class="h-[250px] sm:h-[200px] xs:h-[150px]" id="donutchart"></section>
             </section>
 
-            <section class="shadow p-2 hidden lg:block" id="transactions">
+            <section class="shadow p-2  id="transactions">
               <div>
                 <h1 class="text-xl font-semibold mb-2">All Transactions</h1>
                 <div class="mb-4 flex justify-between">
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </article>
         </section>
       </div>
-      <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
-        <div class="bg-white p-4 rounded-lg shadow-lg" style="width: 400px; height: auto;">
+      <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
           <h2 class="text-lg font-semibold mb-4">Add Payment</h2>
           <form id="payment-form">
             <div class="mb-4">
@@ -139,13 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
-      <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
-        <div class="bg-white p-4 rounded-lg shadow-lg" style="width: 400px; height: auto;">
+      <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
           <h2 class="text-lg font-semibold mb-4">Login</h2>
           <form id="login-form">
             <div class="mb-4">
               <label class="block text-sm font-medium mb-1">Name</label>
               <input type="text" id="login-name" class="border border-gray-300 p-2 rounded-lg w-full" required />
+            </div>
+            <div class="mb-4">
               <label class="block text-sm font-medium mb-1">Account Number</label>
               <input type="number" id="login-account" class="border border-gray-300 p-2 rounded-lg w-full" required />
             </div>
@@ -157,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
-      <footer class='flex bg-black justify-between p-2 text-white block lg:hidden'>
+      <footer class='flex bg-black justify-between p-2 text-white lg:hidden'>
         <div>
           <p id="home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></p>
           <p>home</p>
